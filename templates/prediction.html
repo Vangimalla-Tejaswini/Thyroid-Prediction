@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>A Dynamic Selection Hybrid Model for Advancing Thyroid Care With BOOST Balancing Method</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="/static/css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="/static/css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Righteous&display=swap" rel="stylesheet">
+   <!-- owl stylesheets -->
+   <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+
+<div style="background-color: rgba(0, 0, 0, 0.568);">
+   <body style="background-image: url('/static/images/background.webp'); background-size: 100%; background-attachment: fixed;">
+      
+      <div class="header_section" style="background-color: rgba(0, 0, 0, 0.342);">
+         <div class="header_main">
+            <div class="container-fluid">
+               <div class="menu_main" style="height: 70px;">
+                    <ul>
+                        <li><a href="{{url_for('home')}}">Home</a></li>
+                        <li><a href="{{url_for('prediction')}}" style="color: rgb(20, 231, 20);">Prediction</a></li>
+                        <li><a href="{{url_for('index')}}">Logout</a></li>
+                    </ul>
+               </div>
+            </div>
+         </div>
+         
+        <div class="contact_section layout_padding" style="background-color: rgba(0, 0, 0, 0.301);">
+            <div class="container" style="margin-top: -62px;">
+                <h1 class="contact_taital" style="color: white;"><br>Prediction section</h1>
+                <div class="email_text" style="width: 605px; height: 1050px; background-color: rgb(8, 102, 50); border-radius: 10px;">
+                    <center>
+                        <div class="col-10">
+
+                            {% if predicted_disorder %}
+                                <h3 style="color: yellow;">Results</h3>
+                                <h4 style="color: rgb(168, 186, 204);">Predicted Disorder: {{predicted_disorder}}</h4>
+                                <h4 style="color: rgb(168, 186, 204);">Predicted Condition: {{predicted_condition}}</h4>
+                            {% endif %}
+                        
+                            <form action="{{url_for('prediction')}}" method="post" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <input type="number" step="0.00000000001" class="email-bt" name="TT4" placeholder="Enter TT4 level in blood" required>
+                                </div>
+    
+                                <div class="form-group">
+                                    <select name="tumor" class="email-bt" required>
+                                        <option value="">Do you have tumor?</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="number" step="0.00000000001" class="email-bt" name="FTI" placeholder="Enter FTI level in blood" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="TSH_measured" class="email-bt" required>
+                                        <option value="">Did you measured TSH in blood?</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="pregnant" class="email-bt" required>
+                                        <option value="">Are you pregnant?</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="number" step="0.00000000001" class="email-bt" name="TSH" placeholder="Enter TSH level in blood" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="query_hyperthyroid" class="email-bt" required>
+                                        <option value="">Are you believe(feel) you have hyperthyroid?</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="number" step="0.00000000001" class="email-bt" name="T4U" placeholder="Enter T4U level in blood" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="on_antithyroid_meds" class="email-bt" required>
+                                        <option value="">Are you taking antithyroid medicines?</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="query_hypothyroid" class="email-bt" required>
+                                        <option value="">Are you believe(feel) you have hypothyroid?</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                                
+    
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                            </form><br>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      {% if message %}
+         <script>
+            alert("{{message}}")
+         </script>
+      {% endif %}
+      
+      
+
+   </body>
+</div>
+
+</html>

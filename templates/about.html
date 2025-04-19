@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+
+{% block navbar %}
+   <li><a href="{{url_for('index')}}">Home</a></li>
+   <li><a href="{{url_for('about')}}" style="color: rgb(20, 231, 20);">About</a></li>
+   <li><a href="{{url_for('register')}}">Register</a></li>
+   <li><a href="{{url_for('login')}}">Login</a></li>
+{% endblock %}
+
+
+{% block content %}
+   <div class="about_section layout_padding" style="background-color: rgba(0, 0, 0, 0.507);">
+      <div class="container-fluid">
+         <div class="row" style=" padding: 20px;">
+            <div class="col-md-6" style="background-color: rgb(15, 156, 27);">
+               <div class="about_taital_main">
+                  <h1 class="about_taital" style="color: white; margin-top: -150px;">About</h1>
+                  <p class="about_text" style="color: white; text-align: justify; margin-top: -100px; margin-left: -50px;"><br>Thyroid disorders, including hypothyroidism and hyperthyroidism, pose significant challenges in diagnosis due to their complex nature and the imbalanced distribution of related medical data. Traditional machine learning models have shown promise in classifying thyroid conditions, yet they struggle to maintain high accuracy and adaptability in the presence of evolving, imbalanced datasets. This study aims to develop a Dynamic Selection Hybrid Model to improve the diagnostic process for thyroid disorders. By integrating a variety of machine learning algorithms such as Decision Trees, Support Vector Machines (SVM), K-Nearest Neighbors (KNN), Random Forest, AdaBoost, and Gradient Boosting—into an Adaptive Dynamic Ensemble Framework, the model dynamically selects the most effective classifier based on the input data. To further enhance performance, the BOOST Balancing Method is implemented to address the challenges of data imbalance, ensuring accurate classification across eight specific thyroid conditions: hyperthyroid, T3 toxic, toxic goiter, secondary toxic, hypothyroid, primary hypothyroid, compensated hypothyroid, and secondary hypothyroid. Experimental validation using thyroid disorder datasets demonstrates that the proposed system significantly outperforms static models, higher classification accuracy, and improved handling of imbalanced data. This dynamic model aims to provide a more accurate, flexible, and responsive solution for thyroid disease diagnosis, ultimately advancing the precision and quality of thyroid care.
+                  </p><br>
+                  <p class="about_text" style="color: yellow; margin-left: -50px;">
+                     "Empowering Thyroid Care with Precision: The BOOST Hybrid Model for Balanced Health"
+                  </p>
+                  <p style="color: rgb(15, 156, 27);">
+                     "Empowering Thyroid Care with Precision:""
+                  </p>
+               </div>
+            </div>
+            <div class="col-md-6 padding_right_0">
+               <div><img src="/static/images/about.jpg" class="about_img"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+{% endblock %}

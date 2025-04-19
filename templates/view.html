@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+
+
+{% block navbar %}
+    <li><a href="{{url_for('home')}}">Home</a></li>
+    <li><a href="{{url_for('split')}}" style="color: rgb(20, 231, 20);">Split</a></li>
+    <li><a href="{{url_for('index')}}">Logout</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+    <style>
+        /* Styling for table container to add scrollbars */
+        .table-responsive {
+            max-height: 500px; /* Fixed height for vertical scroll */
+            overflow-y: auto; /* Enable vertical scroll */
+            overflow-x: auto; /* Enable horizontal scroll */
+            margin: 20px auto;
+            width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+    </style>
+
+    <div class="contact_section layout_padding" style="background-color: rgba(0, 0, 0, 0.301);">
+        <div class="container" style="margin-top: -62px;">
+        <h1 class="contact_taital" style="color: white;"><br>Split Data</h1>
+            <div class="email_text" style="width: 605px; height: 530px; background-color: rgb(8, 102, 50); border-radius: 10px;">
+                <center>
+                    <div class="col-10">
+                    
+                        <form action="{{url_for('split')}}" method="post">
+
+                            <div class="form-group">
+                                <input type="number" max="30" min="10" class="email-bt" name="split_size" placeholder="Enter the split percentage of test data (e.g, 20)" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                        </form><br>
+                    </div>
+                </center>
+            </div>
+        
+            <h1 class="contact_taital" style="margin-top: 100px; color: rgb(28, 26, 150);"><br>View Data</h1>
+
+            <div class="container">
+                <div class="table-responsive">
+                    <center>
+                        {{ data | safe }}
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

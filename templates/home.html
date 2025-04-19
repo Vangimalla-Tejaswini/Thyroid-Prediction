@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+
+{% block navbar %}
+    <li><a href="{{url_for('home')}}" style="color: rgb(20, 231, 20);">Home</a></li>
+    <li><a href="{{url_for('upload')}}">Upload</a></li>
+    <li><a href="{{url_for('index')}}">Logout</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <div class="banner_section layout_padding" style="background-color: rgba(0, 0, 0, 0.301);">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <h1 class="banner_taital" style="margin-top: 60px;">WELCOME!</h1>
+                    <p class="banner_text" style="font-size: 20px;">
+                        A Dynamic Selection Hybrid Model for Advancing Thyroid Care With BOOST Balancing Method
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}
